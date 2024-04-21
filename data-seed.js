@@ -1,15 +1,15 @@
-import productImage1 from './assets/img/photo-1.jpg';
-import productImage2 from './assets/img/photo-2.jpg';
-import productImage3 from './assets/img/photo-3.jpg';
-import productImage4 from './assets/img/photo-4.jpg';
-import productImage5 from './assets/img/photo-5.jpg';
-import productImage6 from './assets/img/photo-6.jpg';
-import productImage7 from './assets/img/photo-7.jpg';
-import productImage8 from './assets/img/photo-8.jpg';
-import productImage9 from './assets/img/photo-9.jpg';
-import productImage10 from './assets/img/photo-10.jpg';
-import productImage11 from './assets/img/photo-11.jpg';
-import productImage12 from './assets/img/photo-12.jpg';
+import productImage1 from './src/assets/img/photo-1.jpg';
+import productImage2 from './src/assets/img/photo-2.jpg';
+import productImage3 from './src/assets/img/photo-3.jpg';
+import productImage4 from './src/assets/img/photo-4.jpg';
+import productImage5 from './src/assets/img/photo-5.jpg';
+import productImage6 from './src/assets/img/photo-6.jpg';
+import productImage7 from './src/assets/img/photo-7.jpg';
+import productImage8 from './src/assets/img/photo-8.jpg';
+import productImage9 from './src/assets/img/photo-9.jpg';
+import productImage10 from './src/assets/img/photo-10.jpg';
+import productImage11 from './src/assets/img/photo-11.jpg';
+import productImage12 from './src/assets/img/photo-12.jpg';
 
 export const products = [{
   id: '123',

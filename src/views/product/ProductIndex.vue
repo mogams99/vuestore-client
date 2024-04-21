@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { products } from '../../data-seed';
+import { products } from '../../../data-seed';
 
 export default {
   data() {
