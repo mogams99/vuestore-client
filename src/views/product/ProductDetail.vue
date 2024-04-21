@@ -1,50 +1,69 @@
 <template>
   <div>
-    <h1>Product Detail</h1>
+    <div id="page-wrap">
+      <div id="img-wrap">
+        <img :src="product.imageUrl" alt="">
+      </div>
+      <div id="product-details">
+        <h1>{{ product.name }}</h1>
+        <h3 id="price">Rp. {{ product.price }}</h3>
+        <p>Avarage rating: {{ product.averageRating }}</p>
+        <button id="add-to-cart">Add to Cart</button>
+        <p>{{ product.description }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import { products } from '../../../data-seed';
 
-}
+export default {
+  data() {
+    return {
+      products
+    }
+  },
+  computed: {
+    product() {
+      return this.products.find((p) => {
+        return p.id === this.$route.params.id
+      });
+    }
+  },
+  mounted() {
+    console.log(this.product);
+  }
+};
 </script>
 
 <style scoped>
-  .grid-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  #page-wrap {
     margin-top: 16px;
+    padding: 16px;
+    max-width: 600px;
   }
 
-  .product-item {
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px #888;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2%;
-    padding: 20px;
-    position: relative;
-    width: 32%;
-  }
-
-  .product-name {
-    margin-bottom: 0;
+  #img-wrap {
+    text-align: center;
   }
 
   img {
-    height: 200px;
-    width: 200px;
-    border-radius: 5%;
+    width: 400px;
   }
 
-  a {
+  #product-details {
+    padding: 16px;
+    position: relative;
+  }
+
+  #add-to-cart {
     width: 100%;
   }
 
-  button {
-    width: 100%;
+  #price {
+    position: absolute;
+    top: 24px;
+    right: 16px;
   }
 </style>

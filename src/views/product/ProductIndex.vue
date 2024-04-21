@@ -12,7 +12,7 @@
           <p class="product-price">Rp. {{ product.price }}</p>
           <router-link :to="{ name: 'product-detail', params: {id: product.id} }">
             <button>Detail</button>
-          </router-link> |
+          </router-link>
         </div>
       </div>
     </div>
