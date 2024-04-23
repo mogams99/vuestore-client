@@ -2,18 +2,11 @@
   <div>
     <div id="page-wrap">
       <h1>Shopping Cart</h1>
-      <div 
+      <CartItem
         v-for="item in cartItems"
         :key="item.id"
-        class="product-container"
-      >
-        <img :src="item.imageUrl" alt="" class="product-image">
-        <div class="details-wrap">
-          <h3>{{ item.name }}</h3>
-          <p>Rp. {{ item.price }}</p>
-        </div>
-        <button class="remove-button">Remove</button>
-      </div>
+        :item="item"
+      />
       <h3 id="total-price"> Total: Rp. {{ totalPrice }}</h3>
       <button id="checkout-button">Checkout</button>
     </div>
@@ -22,8 +15,12 @@
 
 <script>
 import { cartItems } from '../../data-seed';
+import CartItem from '../../components/CartItem.vue';
 
 export default {
+  components: {
+    CartItem
+  },
   data() {
     return {
       cartItems
@@ -53,25 +50,5 @@ export default {
   }
   #checkout-button {
     width: 100%;
-  }
-  .product-container {
-    align-content: 'center';
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    padding: 16px;
-    width: 100%;
-  }
-  .product-image {
-    flex: 1;
-    height: 100px;
-    max-width: 100px;
-  }
-  .details-wrap {
-    padding: 0 16px;
-    flex: 3;
-  }
-  .remove-button {
-    flex: 1;
-    margin: auto;
   }
 </style>
