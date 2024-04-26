@@ -8,7 +8,8 @@
         <h1>{{ product.name }}</h1>
         <h3 id="price">Rp. {{ product.price }}</h3>
         <p>Avarage rating: {{ product.averageRating }}</p>
-        <button id="add-to-cart">Add to Cart</button>
+        <button v-if="!notif" id="add-to-cart" @click="addToCart(product.code)">Add to Cart</button>
+        <h4 v-if="notif" class="notif">Item added successfully</h4>
         <p>{{ product.description }}</p>
       </div>
     </div>
@@ -27,8 +28,17 @@ export default {
   },
   data() {
     return {
-      product: []
+      product: [],
+      notif: false
     }
+  },
+  methods: {
+    async addToCart(product) {
+      await axios.post('http://localhost:8081/api/orders/user/1/add', {
+        product
+      });
+      this.notif = true;
+    } 
   },
   async created() {
     const code = this.$route.params.id;
@@ -68,5 +78,13 @@ export default {
     position: absolute;
     top: 24px;
     right: 16px;
+  }
+
+  .notif {
+    text-align: center;
+    color: white;
+    background-color: #41B883;
+    padding: 3%;
+    border-radius: 8px;
   }
 </style>
