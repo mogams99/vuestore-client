@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// import { products } from '../../data-seed';
 import axios from 'axios';
 
 import ProductItem from '../../components/ProductItem.vue';
